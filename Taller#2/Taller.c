@@ -49,3 +49,35 @@ float notaMaxRec(const Estudiante arr[], int n);
 float sumaNotasRec(const Estudiante arr[], int n);
 void ordenarCodRec(Estudiante arr[], int n, int inicio);
 int buscarMinIdx(const Estudiante arr[], int n, int inicio, int minIdx);
+int main() {
+    int opcion;
+    int ordenado = 0;
+
+    do {
+        opcion = mostrarMenu();
+
+        switch(opcion) {
+            case NOTA_MAX:
+                printf("Nota máxima: %.2f\n", notaMaxRec(estudiantes, NUM_ESTUDIANTES));
+                break;
+            case PROMEDIO:
+                printf("Promedio: %.2f\n", sumaNotasRec(estudiantes, NUM_ESTUDIANTES)/NUM_ESTUDIANTES);
+                break;
+            case ORDENAR_COD:
+                ordenarCodRec(estudiantes, NUM_ESTUDIANTES, 0);
+                ordenado = 1;
+                printf("Estudiantes ordenados por código.\n");
+                break;
+            case MOSTRAR:
+                mostrarEstudiantes(estudiantes, NUM_ESTUDIANTES);
+                break;
+            case SALIR:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción no válida.\n");
+        }
+    } while(opcion != SALIR);
+
+    return 0;
+}
