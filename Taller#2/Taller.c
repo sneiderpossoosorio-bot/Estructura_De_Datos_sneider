@@ -44,3 +44,8 @@ int mostrarMenu() {
     scanf("%d", &op);
     return op;
 }
+// Prototipos de funciones
+float notaMaxRec(const Estudiante arr[], int n);
+float sumaNotasRec(const Estudiante arr[], int n);
+void ordenarCodRec(Estudiante arr[], int n, int inicio);
+int buscarMinIdx(const Estudiante arr[], int n, int inicio, int minIdx);
