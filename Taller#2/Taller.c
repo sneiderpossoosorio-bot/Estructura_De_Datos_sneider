@@ -81,3 +81,9 @@ int main() {
 
     return 0;
 }
+// Función recursiva para encontrar la nota máxima
+float notaMaxRec(const Estudiante arr[], int n) {
+    if (n == 1) return arr[0].nota;
+    float maxRest = notaMaxRec(arr, n-1);
+    return (arr[n-1].nota > maxRest) ? arr[n-1].nota : maxRest;
+}
