@@ -87,3 +87,8 @@ float notaMaxRec(const Estudiante arr[], int n) {
     float maxRest = notaMaxRec(arr, n-1);
     return (arr[n-1].nota > maxRest) ? arr[n-1].nota : maxRest;
 }
+// Función recursiva para sumar las notas
+float sumaNotasRec(const Estudiante arr[], int n) {
+    if (n == 0) return 0;
+    return arr[n-1].nota + sumaNotasRec(arr, n-1);
+}
