@@ -92,3 +92,21 @@ float sumaNotasRec(const Estudiante arr[], int n) {
     if (n == 0) return 0;
     return arr[n-1].nota + sumaNotasRec(arr, n-1);
 }
+// Función recursiva para ordenar por código (Selection Sort)
+void ordenarCodRec(Estudiante arr[], int n, int inicio) {
+    if (inicio >= n-1) return;
+    int minIdx = buscarMinIdx(arr, n, inicio, inicio);
+    if (minIdx != inicio) {
+        Estudiante tmp = arr[inicio];
+        arr[inicio] = arr[minIdx];
+        arr[minIdx] = tmp;
+    }
+    ordenarCodRec(arr, n, inicio+1);
+}
+
+// Función recursiva para buscar el índice del menor código
+int buscarMinIdx(const Estudiante arr[], int n, int inicio, int minIdx) {
+    if (inicio >= n) return minIdx;
+    if (arr[inicio].codigo < arr[minIdx].codigo) minIdx = inicio;
+    return buscarMinIdx(arr, n, inicio+1, minIdx);
+}
