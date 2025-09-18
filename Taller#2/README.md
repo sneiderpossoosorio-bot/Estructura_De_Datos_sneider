@@ -1,4 +1,10 @@
 # Estructura_De_Datos_sneider
+ 
+# Integrantes Del Grupo:
+Janny Sneider Osorio Angulo
+Carlos Mario Portocarrero Pestana
+
+
 
 
 ## Programa de Estudiantes en C
